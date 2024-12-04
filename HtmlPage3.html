@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Details</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Main Container */
+        .car-details {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+            .car-details h1 {
+                font-size: 2.5rem;
+                margin: 20px 0;
+                color: #333;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+
+            .car-details p {
+                font-size: 1.2rem;
+                color: #666;
+            }
+
+            /* Image Styling */
+            .car-details img {
+                max-width: 80%;
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+                margin-top: 20px;
+            }
+
+            /* Button Styling */
+            .car-details button {
+                margin-top: 30px;
+                padding: 12px 30px;
+                font-size: 1.2rem;
+                background-color: #f4a261;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s ease, transform 0.3s ease;
+            }
+
+                .car-details button:hover {
+                    background-color: #e07b3c;
+                    transform: translateY(-3px);
+                }
+
+                .car-details button:active {
+                    transform: translateY(0);
+                }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+            footer p {
+                font-size: 1rem;
+            }
+    </style>
+</head>
+<body>
+    <!-- Car Details Section -->
+    <div class="car-details">
+       
+        <img src="img/2222222222.jpg" id="carImage" alt="Car">
+        <h1 id="carTitle">Car Title</h1>
+        <p id="carPrice">Price: $0/day</p>
+        <p id="carDescription">Description of the car will go here.</p>
+        <button onclick="addToFavorites()">Add to Favorites</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Car Rental. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Retrieve car type from URL
+        const params = new URLSearchParams(window.location.search);
+        const carType = params.get('car');
+
+        // Car details based on car type
+        const carDetails = {
+            luxury: {
+                title: 'Luxury Car',
+                price: '$100/day',
+                description: 'A luxury car with premium features and maximum comfort.',
+                image: 'car1.jpg'
+            },
+            economy: {
+                title: 'Economy Car',
+                price: '$50/day',
+                description: 'An affordable and fuel-efficient car for everyday use.',
+                image: 'car2.jpg'
+            },
+            suv: {
+                title: 'SUV',
+                price: '$80/day',
+                description: 'A spacious and versatile SUV, perfect for families.',
+                image: 'car3.jpg'
+            }
+        };
+
+        // Update content based on the car type
+        if (carDetails[carType]) {
+            document.getElementById('carImage').src = carDetails[carType].image;
+            document.getElementById('carTitle').innerText = carDetails[carType].title;
+            document.getElementById('carPrice').innerText = `Price: ${carDetails[carType].price}`;
+            document.getElementById('carDescription').innerText = carDetails[carType].description;
+        }
+
+        // Function to add car to favorites
+        function addToFavorites() {
+            alert(`${carDetails[carType].title} has been added to your favorites!`);
+        }
+    </script>
+</body>
+</html>

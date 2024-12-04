@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Website</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-attachment: fixed;
+        }
+
+        /* Responsive Topnav */
+        ul.topnav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+            ul.topnav li {
+                float: left;
+            }
+
+                ul.topnav li a {
+                    display: block;
+                    color: white;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                }
+
+                    ul.topnav li a:hover:not(.active) {
+                        background-color: #111;
+                    }
+
+                    ul.topnav li a.active {
+                        background-color: #04AA6D;
+                    }
+
+                ul.topnav li.right {
+                    float: right;
+                }
+
+        @media screen and (max-width: 600px) {
+            ul.topnav li.right,
+            ul.topnav li {
+                float: none;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('img/istockphoto-918555756-1024x1024.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 50px;
+            color: white;
+        }
+
+        .hero-content h1 {
+            margin: 0;
+            font-size: 3rem;
+        }
+
+        .hero-content p {
+            margin: 10px 0 0;
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Responsive Topnav -->
+    <ul class="topnav">
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="HtmlPage5.html">Services</a></li>
+        <li><a href="HtmlPage5.html" class="fas fa-sign-in-alt icon ">log in</a></li>
+        <li class="right"><a href="#about">About</a></li>
+    </ul>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 style="color:black">Welcome to Car Rental</h1>
+            <p style="color:black">Find the best cars at affordable prices!</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2024 Car Rental. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
